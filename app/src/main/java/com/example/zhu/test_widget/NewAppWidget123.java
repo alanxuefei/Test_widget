@@ -8,8 +8,6 @@ import android.content.Intent;
 import android.util.Log;
 import android.widget.RemoteViews;
 
-import java.util.Random;
-
 
 /**
  * Implementation of App Widget functionality.
@@ -48,13 +46,9 @@ public class NewAppWidget123 extends AppWidgetProvider {
     static void updateAppWidget(Context context, AppWidgetManager appWidgetManager,
                                 int appWidgetId,int[] appWidgetIds) {
 
-        int number = (new Random().nextInt(100));
 
-        CharSequence widgetText = String.valueOf(number);
-        // Construct the RemoteViews object
-        RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.new_app_widget123);
-        views.setTextViewText(R.id.button, widgetText);
-
+        RemoteViews views;
+        views = new RemoteViews(context.getPackageName(),R.layout.new_app_widget123);
 
         // Register an onClickListener
         Intent intent = new Intent(context, NewAppWidget123.class);
