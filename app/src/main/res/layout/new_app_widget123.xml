@@ -3,25 +3,27 @@
     android:padding="@dimen/widget_margin" android:background="#09C">
 
     <LinearLayout
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
+        android:layout_height="fill_parent"
+        android:weightSum="1">
 
         <TextView android:id="@+id/appwidget_text" android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:layout_centerHorizontal="true"
             android:layout_centerVertical="true" android:text="@string/appwidget_text"
-            android:textColor="#ffffff" android:textSize="12sp" android:textStyle="italic"
-            android:layout_margin="8dp" android:contentDescription="@string/appwidget_text"
+            android:textColor="#ffffff" android:textSize="14sp" android:textStyle="italic"
+            android:layout_margin="0dp" android:contentDescription="@string/appwidget_text"
             android:background="#09C" />
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="194dp"
+            android:layout_height="58dp"
             android:text="Click"
             android:id="@+id/button"
             android:layout_below="@+id/appwidget_text"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="95dp" />
+            android:layout_marginTop="30dp"
+            android:layout_weight="0.01" />
     </LinearLayout>
 
 </RelativeLayout>
