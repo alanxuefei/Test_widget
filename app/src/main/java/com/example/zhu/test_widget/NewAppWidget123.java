@@ -16,7 +16,7 @@ public class NewAppWidget123 extends AppWidgetProvider {
 
 
     static private  final String ACTION_CLICK = "ACTION_CLICK";
-    static private  int lock=0;
+    static private  int lock=1;
 
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
@@ -60,9 +60,16 @@ public class NewAppWidget123 extends AppWidgetProvider {
                 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
         views.setOnClickPendingIntent(R.id.button, pendingIntent);
         Log.d("stuff", "setonclickpendingintent created");
+
+        if (lock==0) {
+            views.setTextViewText(R.id.button, "Stop");
+        }
+        else
+        {
+            views.setTextViewText(R.id.button, "Start");
+        }
         // Instruct the widget manager to update the widget
          appWidgetManager.updateAppWidget(appWidgetId, views);
-
         if (lock == 0) {
             Intent Myservice_intent = new Intent(context.getApplicationContext(), MyService.class);
             Myservice_intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, appWidgetIds);
@@ -76,7 +83,12 @@ public class NewAppWidget123 extends AppWidgetProvider {
 
             // Update the widgets via the service
             context.stopService(Myservice_intent);  lock=0;
+
+            views = new RemoteViews(context.getPackageName(),R.layout.new_app_widget123);
+            views.setTextViewText(R.id.button, "Start");
         }
+
+
 
     }
 

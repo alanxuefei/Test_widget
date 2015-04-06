@@ -63,7 +63,7 @@ public class MyService extends Service implements SensorEventListener {
         Log.i("Roll = ", String.valueOf(Roll));
 
         StringBuilder sb = new StringBuilder();
-        sb.append("  Azimuth = ").append(String.valueOf(Azimuth)).append("  Pitch = ").append(String.valueOf(Pitch)).append("  Roll = ").append(String.valueOf(Roll));
+        sb.append("Azimuth = ").append(String.valueOf(Azimuth)).append("  Pitch = ").append(String.valueOf(Pitch)).append("  Roll = ").append(String.valueOf(Roll));
         RemoteViews views;
         views = new RemoteViews(this.getApplicationContext().getPackageName(),R.layout.new_app_widget123);
         views.setTextViewText(R.id.appwidget_text, sb.toString());
